@@ -1,0 +1,202 @@
+body{
+
+margin:0;
+background:black;
+color:white;
+font-family:Arial;
+
+}
+
+#space{
+
+position:fixed;
+top:0;
+left:0;
+width:100%;
+height:100%;
+
+}
+
+.content{
+
+position:relative;
+z-index:10;
+
+}
+
+#intro{
+
+position:fixed;
+width:100%;
+height:100%;
+background:black;
+display:flex;
+justify-content:center;
+align-items:center;
+font-size:50px;
+animation:intro 6s forwards;
+
+}
+
+@keyframes intro{
+
+0%{opacity:1}
+100%{opacity:0;visibility:hidden}
+
+}
+
+#proposal{
+
+display:none;
+font-size:40px;
+margin-top:20px;
+color:pink;
+
+}
+
+.cube{
+
+width:200px;
+height:200px;
+margin:40px auto;
+position:relative;
+transform-style:preserve-3d;
+animation:rotateCube 10s infinite linear;
+
+}
+
+.face{
+
+position:absolute;
+width:200px;
+height:200px;
+
+}
+
+.face img{
+
+width:100%;
+height:100%;
+
+}
+
+.front{transform:translateZ(100px)}
+.back{transform:rotateY(180deg) translateZ(100px)}
+.left{transform:rotateY(-90deg) translateZ(100px)}
+.right{transform:rotateY(90deg) translateZ(100px)}
+.top{transform:rotateX(90deg) translateZ(100px)}
+.bottom{transform:rotateX(-90deg) translateZ(100px)}
+
+@keyframes rotateCube{
+
+from{transform:rotateX(0) rotateY(0)}
+to{transform:rotateX(360deg) rotateY(360deg)}
+
+}
+
+#cake{
+
+font-size:80px;
+cursor:pointer;
+
+}
+
+#gameArea{
+
+width:400px;
+height:250px;
+border:2px solid white;
+margin:auto;
+position:relative;
+
+}
+
+.heart{
+
+position:absolute;
+font-size:30px;
+cursor:pointer;
+
+}
+#cakeBox{
+
+font-size:80px;
+margin-top:20px;
+transition:transform 1s;
+
+}
+
+.firework{
+
+position:fixed;
+font-size:40px;
+pointer-events:none;
+
+}
+
+.balloon{
+
+position:fixed;
+font-size:40px;
+animation:floatUp 5s linear forwards;
+
+}
+
+@keyframes floatUp{
+
+0%{
+transform:translateY(0);
+opacity:1;
+}
+
+100%{
+transform:translateY(-800px);
+opacity:0;
+}
+
+}
+
+.cakeCut{
+
+transform:rotate(-15deg) scale(1.2);
+
+}
+
+#surpriseBox{
+position:fixed;
+top:50%;
+left:50%;
+transform:translate(-50%,-50%);
+text-align:center;
+display:none;
+z-index:1000;
+}
+
+#surpriseImage{
+width:350px;
+border-radius:12px;
+opacity:0;
+transform:scale(0.5);
+transition:all 1s ease;
+}
+
+#surpriseImage.show{
+opacity:1;
+transform:scale(1);
+}
+
+#surpriseText{
+margin-top:20px;
+font-size:32px;
+color:#ff4081;
+opacity:0;
+transition:opacity 1s;
+}
+
+#surpriseText.show{
+opacity:1;
+}
+
+.mt-150{
+margin-top:50px;
+}
